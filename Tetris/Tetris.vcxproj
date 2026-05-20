@@ -71,6 +71,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LibraryPath>C:\SDL\SDL2-devel-2.27.1-VC\SDL2-2.27.1\lib\x86;C:\TFF\SDL2_ttf-devel-2.24.0-VC\SDL2_ttf-2.24.0\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -78,10 +81,15 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\SDL\SDL2-devel-2.27.1-VC\SDL2-2.27.1\include;"C:\TFF\SDL2_ttf-devel-2.24.0-VC\SDL2_ttf-2.24.0\include"</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\SDL\SDL2-devel-2.27.1-VC\SDL2-2.27.1\lib\x86;C:\TFF\SDL2_ttf-devel-2.24.0-VC\SDL2_ttf-2.24.0\lib\x86</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;ucrt.lib;vcruntime.lib;msvcrt.lib;kernel32.lib;user32.lib;gdi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -133,7 +141,17 @@
     </MASM>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Interfaz.cpp" />
+    <ClCompile Include="InicioGUI.cpp" />
+    <ClCompile Include="JuegoGUI.cpp" />
+    <ClCompile Include="Jugador.cpp" />
+    <ClCompile Include="Pieza.cpp" />
+    <ClCompile Include="Tablero.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Pieza.h" />
+    <ClInclude Include="Tablero.h" />
+    <ClInclude Include="Jugador.h" />
+    <ClInclude Include="JuegoGUI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

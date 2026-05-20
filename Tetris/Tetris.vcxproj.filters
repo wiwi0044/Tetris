@@ -20,8 +20,34 @@
     </MASM>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Interfaz.cpp">
+    <ClCompile Include="InicioGUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="JuegoGUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Jugador.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tablero.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pieza.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="JuegoGUI.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Jugador.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tablero.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pieza.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

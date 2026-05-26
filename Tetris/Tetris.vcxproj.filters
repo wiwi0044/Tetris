@@ -15,18 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <MASM Include="funciones.asm">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
-    </MASM>
-  </ItemGroup>
-  <ItemGroup>
+    </ClCompile>
     <ClCompile Include="InicioGUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="JuegoGUI.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Jugador.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Tablero.cpp">
@@ -35,19 +30,33 @@
     <ClCompile Include="Pieza.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Jugador.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="JuegoGUI.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="InicioGUI.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Jugador.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="JuegoGUI.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Tablero.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Pieza.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Jugador.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="juegoLogica.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="piezaLogica.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
 </Project>

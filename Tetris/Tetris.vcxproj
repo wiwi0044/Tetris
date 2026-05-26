@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -17,6 +17,27 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="InicioGUI.cpp" />
+    <ClCompile Include="JuegoGUI.cpp" />
+    <ClCompile Include="Pieza.cpp" />
+    <ClCompile Include="Jugador.cpp" />
+    <ClCompile Include="Tablero.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="juegoLogica.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="piezaLogica.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <ClInclude Include="Jugador.h" />
+    <ClInclude Include="Pieza.h" />
+    <ClInclude Include="Tablero.h" />
+    <ClInclude Include="JuegoGUI.h" />
+    <ClInclude Include="InicioGUI.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
@@ -82,14 +103,17 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>C:\SDL\SDL2-devel-2.27.1-VC\SDL2-2.27.1\include;"C:\TFF\SDL2_ttf-devel-2.24.0-VC\SDL2_ttf-2.24.0\include"</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>C:\SDL\SDL2-devel-2.27.1-VC\SDL2-2.27.1\lib\x86;C:\TFF\SDL2_ttf-devel-2.24.0-VC\SDL2_ttf-2.24.0\lib\x86</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;ucrt.lib;vcruntime.lib;msvcrt.lib;kernel32.lib;user32.lib;gdi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;kernel32.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -135,24 +159,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <MASM Include="funciones.asm">
-      <FileType>Document</FileType>
-    </MASM>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="InicioGUI.cpp" />
-    <ClCompile Include="JuegoGUI.cpp" />
-    <ClCompile Include="Jugador.cpp" />
-    <ClCompile Include="Pieza.cpp" />
-    <ClCompile Include="Tablero.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Pieza.h" />
-    <ClInclude Include="Tablero.h" />
-    <ClInclude Include="Jugador.h" />
-    <ClInclude Include="JuegoGUI.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
